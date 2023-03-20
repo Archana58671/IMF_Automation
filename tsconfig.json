@@ -1,0 +1,42 @@
+{
+  "ts-node": {
+        "transpileOnly": true
+     },
+  "compilerOptions": {
+    "target": "es2021",
+    "lib": [
+      "es2021",
+      "dom"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/playwright/node_modules/playwright-core/types/"
+    ],
+    "module": "node16",
+    "sourceMap": false,
+    
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+   
+    // "noUnusedLocals": true,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "noImplicitReturns": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+     //"outDir": "jsfiles",
+    "moduleResolution": "node",
+    "types": [
+      "node",
+      
+    ],
+  },
+  "noFloatingPromises": true,
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**/*"
+  ]
+}
