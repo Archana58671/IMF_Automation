@@ -894,3 +894,22 @@ Scenario:As a Admin Mark As Done for Last LIVE phase of investment
         Then I should navigate to All Investments tab
         When I delete All Investments present in DRAFT state
         Then There should not be any Draft state investments in Dashboard
+
+        @112
+    Scenario: As a Admin Verify Created By User name
+        And I click on Create button
+        Then Create New Investment page should open
+        When I Fill Investment Name and Investment Type
+        And I click on Save button
+        When I click on Home button
+        And I click on All Investments tab
+        When I click on any Investment
+        Then I come back to Details page if investment is not on details page
+        And  I verfiy CreatedBy User name by hovering mouse on info icon
+        When I Fill remaining fields in create new investment page
+        When I click on Next button
+        Then I verfiy CreatedBy User name by hovering mouse on info icon
+        When I click Next button in Roadmap page
+        Then I verfiy CreatedBy User name by hovering mouse on info icon
+        When I click on Next button
+        Then I verfiy CreatedBy User name by hovering mouse on info icon

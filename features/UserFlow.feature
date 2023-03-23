@@ -1059,25 +1059,7 @@ Scenario:As a User Mark As Done for Last LIVE phase of investment
         And I delete the phase added in Greenfield rodmap
 
 
-    @112
-    Scenario: As a Admin Verify Created By User name
-        And I click on Create button
-        Then Create New Investment page should open
-        When I Fill Investment Name and Investment Type
-        And I click on Save button
-        When I click on Home button
-        And I click on All Investments tab
-        When I click on any Investment
-        Then I come back to Details page if investment is not on details page
-        And  I verfiy CreatedBy User name by hovering mouse on info icon
-        When I Fill remaining fields in create new investment page
-        When I click on Next button
-        Then I verfiy CreatedBy User name by hovering mouse on info icon
-        When I click Next button in Roadmap page
-        Then I verfiy CreatedBy User name by hovering mouse on info icon
-        When I click on Next button
-        Then I verfiy CreatedBy User name by hovering mouse on info icon
-
+    
     @113
     Scenario: Verifying justification after Adding a Phase in user Roadmap page
         When I click on Admin icon
@@ -1353,3 +1335,35 @@ Scenario:As a User Mark As Done for Last LIVE phase of investment
         And I delete the phase added in Greenfield rodmap
 
 ##################
+
+@127
+    Scenario: Adding a Phase which is not present in default roadmap and Greenfeild roadmap
+        When I click on Admin icon
+        And I click on Phase tab
+        And I click on Add button
+        When I Enter the Phase name in phase freetext field and click on Add button
+        When I click on Home button
+        And I click on Create button
+        Then Create New Investment page should open
+        When I Fill All fields in create new investment page with investent type as Exploration
+        And I click on Next button
+        Then I should navigate to Roadmap page and see Investment name at the top, Investment Type and Roadmap dropdown and Back, Save As Draft, Next buttons
+        When I Select Roadmap
+        And I hover mouse on Phase
+        Then It should show Add button at the start and end of that phase and Delete button on that phase
+        When I click on ending add button of that phase
+        Then Add Phase popup should  open and it should contain drop down and Free text field for entering justification
+        And Info: If you do not see any required Phase, please contact IMF admin. Add and Cancel button
+        When I Click on dropdown
+        Then It should show all the phases available and Already added phases should be in view mode only
+        When I slect a phase and enter justification and click on Add button
+        Then Phase add successful toaster message should appear, Phase should get added at the end of the phase on which you have clicked add button
+        When I click on Next button
+        Then I should navigate to Objectives and Deliverable page And Page should show Investent Type, Roadmap name and Reset Phase, Back, Next, Save As Draft buttons
+        When I click on Next button
+        Then I should navigate to Review page and should see Investment Type, Roadmap, Phase and Status
+        And I fill All the fields in Review page and click on Send button
+        Then Send For Approval popup should open
+        When I click on Send button present on Send Approval popup
+        Then Investment sent for Approval message should appear
+        And user should recieve submitted email

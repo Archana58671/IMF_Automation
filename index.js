@@ -3,7 +3,7 @@ var reporter = require('cucumber-html-reporter');
 var options = {
         theme: 'bootstrap',
         jsonFile: 'reports/cucumber_report.json',
-        output: 'reports/cucumber_report.html',
+        output: 'reports/IMF_Report.html',
         screenshotsDirectory: 'reports/screenshots/',
         storeScreenshots:false,
         reportSuiteAsScenarios: true,
